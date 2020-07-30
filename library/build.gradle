@@ -2,11 +2,12 @@ apply plugin: 'com.android.library'
 apply plugin: "guru.stefma.bintrayrelease"
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 29
+        targetSdkVersion 28
         versionCode VERSION_CODE as int
         versionName VERSION_NAME
     }
@@ -14,7 +15,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
 }
 
 version = VERSION_NAME

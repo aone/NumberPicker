@@ -5,13 +5,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
-
 import com.shawnlin.numberpicker.NumberPicker;
 
 import java.util.Locale;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,13 +41,6 @@ public class MainActivity extends AppCompatActivity {
         // Set selected text size
         numberPicker.setSelectedTextSize(getResources().getDimension(R.dimen.selected_text_size));
         numberPicker.setSelectedTextSize(R.dimen.selected_text_size);
-
-        // Set selected typeface
-        numberPicker.setSelectedTypeface(Typeface.create(getString(R.string.roboto_light), Typeface.NORMAL));
-        numberPicker.setSelectedTypeface(getString(R.string.roboto_light), Typeface.NORMAL);
-        numberPicker.setSelectedTypeface(getString(R.string.roboto_light));
-        numberPicker.setSelectedTypeface(R.string.roboto_light, Typeface.NORMAL);
-        numberPicker.setSelectedTypeface(R.string.roboto_light);
 
         // Set text color
         numberPicker.setTextColor(ContextCompat.getColor(this, R.color.dark_grey));
@@ -84,9 +77,6 @@ public class MainActivity extends AppCompatActivity {
         // Set wrap selector wheel
         numberPicker.setWrapSelectorWheel(true);
 
-        // Set accessibility description enabled
-        numberPicker.setAccessibilityDescriptionEnabled(true);
-
         // OnClickListener
         numberPicker.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,16 +90,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 Log.d(TAG, String.format(Locale.US, "oldVal: %d, newVal: %d", oldVal, newVal));
-            }
-        });
-
-        // OnScrollListener
-        numberPicker.setOnScrollListener(new NumberPicker.OnScrollListener() {
-            @Override
-            public void onScrollStateChange(NumberPicker picker, int scrollState) {
-                if (scrollState == SCROLL_STATE_IDLE) {
-                    Log.d(TAG, String.format(Locale.US, "newVal: %d", picker.getValue()));
-                }
             }
         });
     }
